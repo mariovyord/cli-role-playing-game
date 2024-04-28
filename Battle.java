@@ -30,7 +30,6 @@ public class Battle {
                     System.out.println("Invalid choice. Please enter 1 to attack or 2 to run.");
             }
         }
-        scanner.close();
     }
   
 
