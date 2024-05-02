@@ -1,23 +1,19 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-    private ArrayList<Monster> monsters;
+    private List<Monster> monsters;
     private ArrayList<String> locations;
     private Monster darkLord;
     private Random random;
 
     public Game() {
       locations = new ArrayList<>(Arrays.asList("the dark forest", "the haunted swamp", "the misty mountains", "the abandoned village"));
-      monsters = new ArrayList<>();
-      monsters.add(new Monster("Goblin"));
-      monsters.add(new Monster("Orc"));
-      monsters.add(new Monster("Troll"));
-
+      monsters = MonstersFactory.createMonsters();
       darkLord = new Monster("Dark Lord");
-
       random = new Random();
     }
 
