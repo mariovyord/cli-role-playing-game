@@ -7,5 +7,6 @@ public interface Combatant {
     String getName();
     int getHealth();
     int getMaxHealth();
+    int getDamage();
     CombatantType getType();
 }

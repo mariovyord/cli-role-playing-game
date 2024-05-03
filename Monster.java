@@ -37,6 +37,10 @@ public class Monster implements Combatant {
     return health > 0;
   }
 
+  public int getDamage() {
+    return damage;
+  }
+
   public void attack(Combatant player) {
     System.out.println(this.name + " attacks " + player.getName() + " for " + damage + " damage!");
     player.takeDamage(damage);
