@@ -64,7 +64,7 @@ public class Game {
     }
 
     private String selectRandomLocation() {
-      int index = random.nextInt(monsters.size());
+      int index = random.nextInt(locations.size());
       return locations.get(index);
     }
 
