@@ -1,7 +1,8 @@
-public class Monster {
+public class Monster implements Combatant {
   private int health;
   private int maxHealth;
   private int damage;
+  private CombatantType type = CombatantType.MONSTER;
   private String name;
 
   public Monster(String name, int health, int damage) {
@@ -36,8 +37,12 @@ public class Monster {
     return health > 0;
   }
 
-  public void attack(Player player) {
+  public void attack(Combatant player) {
     System.out.println(this.name + " attacks " + player.getName() + " for " + damage + " damage!");
     player.takeDamage(damage);
+  }
+
+  public CombatantType getType() {
+    return type;
   }
 }

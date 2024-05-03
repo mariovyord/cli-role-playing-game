@@ -25,7 +25,7 @@ public class Battle {
                         break;
                     }
 
-                    if ((monster.getHealth() < monster.getMaxHealth() / 2) && monster.getName().equals("Dark Lord") && Math.random() < 0.5) {
+                    if ((monster.getHealth() < monster.getMaxHealth() / 2) && monster.getType().equals(CombatantType.BOSS) && Math.random() < 0.5) {
                         // If monster is at less than half health there is chance to flee
                         System.out.println(monster.getName() + " flees from the battle!");
                         break;
