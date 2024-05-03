@@ -3,8 +3,10 @@ public class Player {
   private int damage;
   private String name;
 
-  public Player(String name) {
+  public Player(String name, int health, int damage) {
     this.name = name;
+    this.health = health;
+    this.damage = damage;
   }
 
   @Override()
@@ -22,6 +24,10 @@ public class Player {
 
   public int getHealth() {
     return health;
+  }
+
+  public boolean isAlive() {
+    return health > 0;
   }
 
   public void attack(Monster monster) {

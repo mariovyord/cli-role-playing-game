@@ -5,11 +5,11 @@ public class MonstersFactory {
     public static List<Monster> createMonsters() {
         ArrayList<Monster> monsters = new ArrayList<>();
         
-        monsters.add(new Monster("Goblin"));
-        monsters.add(new Monster("Orc"));
-        monsters.add(new Monster("Troll"));
-        monsters.add(new Monster("Minotaur"));
-        monsters.add(new Monster("Wild Boar"));
+        monsters.add(new Monster("Goblin", 30, 5));
+        monsters.add(new Monster("Orc", 50, 10));
+        monsters.add(new Monster("Troll", 80, 15));
+        monsters.add(new Monster("Minotaur", 100, 20));
+        monsters.add(new Monster("Wild Boar", 20, 5));
 
         return monsters;
     }

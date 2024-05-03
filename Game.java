@@ -13,13 +13,13 @@ public class Game {
     public Game() {
       locations = new ArrayList<>(Arrays.asList("the dark forest", "the haunted swamp", "the misty mountains", "the abandoned village"));
       monsters = MonstersFactory.createMonsters();
-      darkLord = new Monster("Dark Lord");
+      darkLord = new Monster("Dark Lord", 100, 30);
       random = new Random();
     }
 
     public void start() {
         System.out.println("Welcome to The Ring of Power: Journey to the Dark Lord's Castle");
-        System.out.println("Press any key to continue...");
+        System.out.println("Press 'enter' to continue...");
 
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine(); 
@@ -27,21 +27,22 @@ public class Game {
         System.out.println("Choose a player name:");
         String name = scanner.nextLine();
 
-        Player player = new Player(name);
+        Player player = new Player(name, 100, 20);
         
         System.out.println("As " + player.getName() + ", a mighty warrior, you embark on a perilous journey into the heart of darkness.");
         
-        for (int i = 1; i <= 10; i++) {
+        int round = 0;
+        while (player.isAlive() && round <= 10) {
           Monster enemy;
 
-          if (i == 10) {
+          if (round == 10) {
             enemy = darkLord; // The Dark Lord is the final boss
           } else {
             enemy = selectRandomMonster();
           }
 
           String location;
-          if (i == 10) {
+          if (round == 10) {
               location = "the castle"; // Final battle with the Dark Lord at the castle
           } else {
               location = selectRandomLocation();
@@ -51,9 +52,14 @@ public class Game {
           battle.start(player, enemy);
 
           Delay.run(500);
+          round++;
         }
 
-        endGame();
+        if (player.isAlive()) {
+          endGame();
+        } else {
+          System.out.println("\nYou have been defeated! Your journey ends here.");
+        }
 
         scanner.close();
     }
