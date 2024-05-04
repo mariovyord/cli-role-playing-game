@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import items.FireGranade;
-import items.HealingPotion;
 import items.Item;
+import items.NormalHealingPotion;
+import items.MinorHealingPotion;
 
 public class ItemDroppper {
     ArrayList<Item> items = new ArrayList<>();
 
     public ItemDroppper() {
-        items.add(new HealingPotion());
+        items.add(new NormalHealingPotion());
+        items.add(new MinorHealingPotion());
         items.add(new FireGranade());
     }
 

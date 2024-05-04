@@ -9,6 +9,7 @@ import creatures.Monster;
 import creatures.MonstersFactory;
 import creatures.Player;
 import items.HealingPotion;
+import items.NormalHealingPotion;
 import utils.Delay;
 
 public class Game {
@@ -36,7 +37,7 @@ public class Game {
     String name = scanner.nextLine();
 
     Player player = new Player(name, 100, 20);
-    player.addItem(new HealingPotion());
+    player.addItem(new NormalHealingPotion());
 
     System.out.println(
         "As " + player.getName() + ", a mighty warrior, you embark on a perilous journey into the heart of darkness.");
