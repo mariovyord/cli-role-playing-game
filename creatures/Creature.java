@@ -22,6 +22,13 @@ public abstract class Creature implements Combatant {
     health -= damage;
   }
 
+  public void takeHealth(int health) {
+    this.health += health;
+    if (this.health > maxHealth) {
+      this.health = maxHealth;
+    }
+  }
+
   public String getName() {
     return this.name;
   }
