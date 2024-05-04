@@ -9,10 +9,10 @@ import items.MagicGranade;
 import items.NormalHealingPotion;
 import items.MinorHealingPotion;
 
-public class ItemDroppper {
+public class ItemDropper {
     ArrayList<Item> items = new ArrayList<>();
 
-    public ItemDroppper() {
+    public ItemDropper() {
         items.add(new NormalHealingPotion());
         items.add(new MinorHealingPotion());
         items.add(new FireGranade());

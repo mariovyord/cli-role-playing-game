@@ -17,7 +17,7 @@ public class Battle {
     }
 
     public void start(Player player, Monster monster) {
-        ItemDroppper itemDroppper = new ItemDroppper();
+        ItemDropper itemDropper = new ItemDropper();
         Scanner scanner = new Scanner(System.in);
         System.out.println(
                 "You are in " + location + " and you see " + monster.getName() + " blocking the path! What do you do?");
@@ -39,7 +39,7 @@ public class Battle {
 
                         // Change for player to get item
                         if (Math.random() < DROP_ITEM_CHANCE) {
-                            Item item = itemDroppper.dropRandom();
+                            Item item = itemDropper.dropRandom();
                             player.addItem(item);
                             System.out.println("You found an item: " + item.getName());
                         }
