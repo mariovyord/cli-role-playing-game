@@ -47,3 +47,6 @@ build/
 
 # Maven files
 target/
+
+# notes files
+notes.md
