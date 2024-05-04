@@ -1,3 +1,4 @@
+package creatures;
 
 public interface Combatant {
     void attack(Combatant opponent);

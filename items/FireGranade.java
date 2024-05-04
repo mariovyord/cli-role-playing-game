@@ -3,9 +3,9 @@ package items;
 import creatures.Combatant;
 
 public class FireGranade implements Item {
-    private String name;
-    private String description;
-    private int damage;
+    private String name = "Fire Granade";
+    private int damage = 10;
+    private String description = "A granade that explodes in a burst of fire for" + damage + " damage";
 
     public String getName() {
         return name;
@@ -15,8 +15,10 @@ public class FireGranade implements Item {
         return description;
     }
 
-    public void use(Combatant target) {
-        target.takeDamage(damage);
+    public void use(Combatant user, Combatant enemy) {
+        enemy.takeDamage(damage);
+        System.out.println(
+                user.getName() + " throws a fire granade at " + enemy.getName() + " for " + damage + " damage!");
     }
 
 }

@@ -1,10 +1,12 @@
+package creatures;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MonstersFactory {
     public static List<Monster> createMonsters() {
         ArrayList<Monster> monsters = new ArrayList<>();
-        
+
         monsters.add(new Monster("Goblin", 30, 5));
         monsters.add(new Monster("Orc", 50, 10));
         monsters.add(new Monster("Troll", 80, 15));

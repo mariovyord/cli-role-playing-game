@@ -7,5 +7,5 @@ public interface Item {
 
     public String getDescription();
 
-    public void use(Combatant target);
+    public void use(Combatant user, Combatant enemy);
 }
