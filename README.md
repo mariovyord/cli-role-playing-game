@@ -5,6 +5,10 @@ Gameplay
 
 As the courageous hero, your objective is to navigate through the treacherous landscape surrounding the ominous castle of the Dark Lord. Along the way, you will encounter various challenges, obstacles, and adversaries that stand between you and ultimate victory.
 
+## Project Overview
+
+This application serves as a testing ground for exploring and experimenting with various Java concepts and features. Please note that as a playground, the code within this application may change frequently in content and quality as I continue to learn and grow my Java skills.
+
 ## Features
 
 - Engaging Narrative: Immerse yourself in a captivating storyline filled with suspense, danger, and heroism.
