@@ -25,7 +25,8 @@ public class Battle {
         boolean isBattleOver = false;
         while (player.isAlive() && monster.isAlive() && !isBattleOver) {
             System.out.println("1. Attack");
-            System.out.println("2. Run");
+            System.out.println("2. Use Item");
+            System.out.println("3. Run");
             int choice = scanner.nextInt();
             scanner.nextLine();
             Delay.run(500);
@@ -60,27 +61,31 @@ public class Battle {
                         break;
                     }
 
-                    // Give player a choice to use item
+                    break;
+                case 2:
                     if (!player.getItems().isEmpty()) {
-                        System.out.println("Do you want to use an item? (yes/no)");
-                        String useItem = scanner.nextLine();
-                        if (useItem.equalsIgnoreCase("yes")) {
-                            player.printItems();
-                            System.out.println("Enter the item number to use:");
-                            int itemNumber = scanner.nextInt();
-                            scanner.nextLine();
-                            player.useItem(itemNumber, player, monster);
-                            Delay.run(500);
+                        player.printItems();
+                        System.out.println("Enter the item number to use:");
+                        int itemNumber = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (itemNumber < 0 || itemNumber >= player.getItems().size()) {
+                            System.out.println("Invalid item number.");
+                            break;
                         }
+
+                        player.useItem(itemNumber, player, monster);
+                        Delay.run(500);
 
                         if (!monster.isAlive()) {
                             System.out.println("You defeated " + monster.getName() + "!");
                             break;
                         }
+                    } else {
+                        System.out.println("You don't have any items to use.");
                     }
-
                     break;
-                case 2:
+                case 3:
                     // While trying to flee there is a chance to take damage
                     if (Math.random() < 0.5) {
                         System.out.println("You get hurt while trying to flee for " + monster.getDamage() + " damage!");

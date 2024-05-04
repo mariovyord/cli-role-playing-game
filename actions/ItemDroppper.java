@@ -22,4 +22,5 @@ public class ItemDroppper {
     public Item dropRandom() {
         return items.get(new Random().nextInt(items.size()));
     }
+
 }
