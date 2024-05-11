@@ -1,6 +1,7 @@
 package items;
 
 import creatures.Combatant;
+import utils.CliMachine;
 
 public class Granade implements Item {
     private String name;
@@ -22,7 +23,7 @@ public class Granade implements Item {
 
     public void use(Combatant user, Combatant enemy) {
         enemy.takeDamage(damage);
-        System.out.println(
+        CliMachine.print(
                 user.getName() + " throws a fire granade at " + enemy.getName() + " for " + damage + " damage!");
     }
 

@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 import actions.Battle;
 import creatures.Monster;
@@ -37,11 +36,7 @@ public class Game {
     CliMachine.print("Welcome to The Ring of Power: Journey to the Dark Lord's Castle");
     CliMachine.pause();
 
-    Scanner scanner = new Scanner(System.in);
-    scanner.nextLine();
-
-    System.out.println("Choose a player name:");
-    String name = scanner.nextLine();
+    String name = CliMachine.ask("Enter your name:");
 
     Player player = new Player(name, 100, 20);
     player.addItem(new NormalHealingPotion());
@@ -51,9 +46,7 @@ public class Game {
 
     int round = 0;
     while (player.isAlive() && round <= 10) {
-      System.out.println("Press '1' to see player stats and '2' to continue your adventure.");
-      int choice = scanner.nextInt();
-      scanner.nextLine();
+      int choice = CliMachine.encounter("Press '1' to see player stats and '2' to continue your adventure.");
 
       switch (choice) {
         case 1:
@@ -98,8 +91,6 @@ public class Game {
     } else {
       CliMachine.print("You have been defeated! Your journey ends here.");
     }
-
-    scanner.close();
   }
 
   private Monster selectRandomMonster() {

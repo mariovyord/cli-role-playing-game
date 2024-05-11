@@ -1,6 +1,7 @@
 package items;
 
 import creatures.Combatant;
+import utils.CliMachine;
 
 public class HealingPotion implements Item {
     private String name;
@@ -22,6 +23,6 @@ public class HealingPotion implements Item {
 
     public void use(Combatant user, Combatant enemy) {
         user.takeHealth(healAmount);
-        System.out.println(user.getName() + " drinks a healing potion and heals for " + healAmount + " health!");
+        CliMachine.print(user.getName() + " drinks a healing potion and heals for " + healAmount + " health!");
     }
 }

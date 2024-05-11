@@ -1,7 +1,5 @@
 package utils;
 
-import java.lang.reflect.Array;
-
 /*
  * Class used to handle the CLI commands
  * * Print message
@@ -30,5 +28,22 @@ public class CliMachine {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static int encounter(String question) {
+        System.out.println(question);
+        String answer = System.console().readLine().trim();
+
+        try {
+            return Integer.parseInt(answer);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a number.");
+            return encounter(question);
+        }
+    }
+
+    public static String ask(String question) {
+        System.out.println(question);
+        return System.console().readLine().trim();
     }
 }
