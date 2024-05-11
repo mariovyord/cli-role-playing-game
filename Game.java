@@ -13,6 +13,13 @@ import items.HealingPotion;
 import items.NormalHealingPotion;
 import utils.Delay;
 
+/**
+ * The Game class represents a game session.
+ * <p>
+ * This class handles the game loop, player actions, and game state.
+ * It is responsible for starting and ending the game, and for processing player
+ * actions during the game.
+ */
 public class Game {
   private List<Monster> monsters;
   private ArrayList<String> locations;
