@@ -1,4 +1,3 @@
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,8 +8,8 @@ import actions.Battle;
 import creatures.Monster;
 import creatures.MonstersFactory;
 import creatures.Player;
-import items.HealingPotion;
 import items.NormalHealingPotion;
+import utils.CliMachine;
 import utils.Delay;
 
 /**
@@ -35,8 +34,8 @@ public class Game {
   }
 
   public void start() {
-    System.out.println("Welcome to The Ring of Power: Journey to the Dark Lord's Castle");
-    System.out.println("Press 'enter' to continue...");
+    CliMachine.print("Welcome to The Ring of Power: Journey to the Dark Lord's Castle");
+    CliMachine.pause();
 
     Scanner scanner = new Scanner(System.in);
     scanner.nextLine();
@@ -47,7 +46,7 @@ public class Game {
     Player player = new Player(name, 100, 20);
     player.addItem(new NormalHealingPotion());
 
-    System.out.println(
+    CliMachine.print(
         "As " + player.getName() + ", a mighty warrior, you embark on a perilous journey into the heart of darkness.");
 
     int round = 0;
@@ -66,8 +65,7 @@ public class Game {
           break;
       }
 
-      System.out.println("Press 'enter' to continue...");
-      scanner.nextLine();
+      CliMachine.pause();
 
       Monster enemy;
 
@@ -98,7 +96,7 @@ public class Game {
     if (player.isAlive()) {
       endGame();
     } else {
-      System.out.println("\nYou have been defeated! Your journey ends here.");
+      CliMachine.print("You have been defeated! Your journey ends here.");
     }
 
     scanner.close();
@@ -115,9 +113,12 @@ public class Game {
   }
 
   private void endGame() {
-    System.out.println("\nCongratulations, brave warrior!");
-    System.out.println("With unwavering courage, you have vanquished the Dark Lord.");
-    System.out.println("The Ring of Power is now yours to wield, its fate intertwined with your own.");
+    String[] msgs = {
+        "You have reached the Dark Lord's castle, the final stage of your journey.",
+        "The fate of Middle Earth rests on your shoulders.",
+        "Prepare yourself for the ultimate battle!"
+    };
 
+    CliMachine.print(msgs);
   }
 }
