@@ -13,7 +13,7 @@ public abstract class Creature implements Combatant {
   private String name;
   private ArrayList<Item> items = new ArrayList<>();
 
-  public Creature(String name, int health, int damage, CombatantType type) {
+  protected Creature(String name, int health, int damage, CombatantType type) {
     this.name = name;
     this.health = health;
     this.maxHealth = health;
