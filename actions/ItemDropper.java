@@ -3,9 +3,9 @@ package actions;
 import java.util.ArrayList;
 import java.util.Random;
 
-import items.FireGranade;
+import items.FireGrenade;
 import items.Item;
-import items.MagicGranade;
+import items.MagicGrenade;
 import items.NormalHealingPotion;
 import items.MinorHealingPotion;
 
@@ -15,8 +15,8 @@ public class ItemDropper {
     public ItemDropper() {
         items.add(new NormalHealingPotion());
         items.add(new MinorHealingPotion());
-        items.add(new FireGranade());
-        items.add(new MagicGranade());
+        items.add(new FireGrenade());
+        items.add(new MagicGrenade());
     }
 
     public Item dropRandom() {
