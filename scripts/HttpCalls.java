@@ -15,6 +15,7 @@ public class HttpCalls {
 
             HttpRequest req = HttpRequest.newBuilder()
                     .uri(URI.create("https://jsonplaceholder.typicode.com/posts/1"))
+                    .GET()
                     .build();
 
             client.sendAsync(req, HttpResponse.BodyHandlers.ofString())
